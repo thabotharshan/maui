@@ -281,6 +281,7 @@ stages:
   
   - stage: micro_build_signing
     displayName: MicroBuildSign
+    dependsOn: []
     jobs:
       - job: nuget_sign
         displayName: Sign Phase
