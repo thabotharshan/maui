@@ -1,0 +1,18 @@
+<Project>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudioEng.MicroBuild.Core" Version="0.4.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+   <Target Name="PrepareItemsToSign" BeforeTargets="Sign">
+     <ItemGroup Condition="'$(SignBinaries)' == 'true'">
+        <ItemsToSign Include="$(MauiArtifactsDir)*.dll" />
+      </ItemGroup>
+   </Target>
+   
+  <ItemGroup>
+    <FileExtensionSignInfo Include=".pkg" CertificateName="8003" />
+  </ItemGroup>
+
+</Project>

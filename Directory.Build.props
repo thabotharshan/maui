@@ -1,4 +1,9 @@
 <Project>
+
+  <PropertyGroup>
+      <RepoRoot>$([MSBuild]::EnsureTrailingSlash('$(MSBuildThisFileDirectory)'))</RepoRoot>
+  </PropertyGroup>
+
   <PropertyGroup>
     <__XFBuildTasksLocation>$(_XFBuildTasksLocation)</__XFBuildTasksLocation>
     <__XFBuildTasksLocation Condition="'$(__XFBuildTasksLocation)' == '' AND '$(MSBuildRuntimeType)' == 'Core'">$(MSBuildThisFileDirectory).nuspec\netstandard2.0\</__XFBuildTasksLocation>
@@ -13,7 +18,9 @@
     <Product>System.Maui</Product>
     <LangVersion>8.0</LangVersion>
     <ProduceReferenceAssembly Condition="'$(UsingMicrosoftNETSdk)' == 'True' AND '$(Configuration)' == 'Debug'">True</ProduceReferenceAssembly>
+    <LicenseFile>$(RepoRoot)LICENSE.TXT</LicenseFile>
   </PropertyGroup>
+
   
   <Import Condition="'$(SampleProject)' != 'True'" Project="SourceLink.Build.props" />
   <!-- This target is replaced by GitInfo when restored. Allows Version.targets to rely on it before restore. -->

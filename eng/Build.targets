@@ -1,0 +1,5 @@
+<Project>
+  <PropertyGroup>
+    <MauiArtifactsDir>$([MSBuild]::NormalizeDirectory('$(ArtifactsDir)', 'win_build'))</MauiArtifactsDir>
+  </PropertyGroup>
+</Project>

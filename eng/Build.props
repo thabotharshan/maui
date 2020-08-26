@@ -1,0 +1,6 @@
+<Project>
+  <ItemGroup>
+    <ProjectToBuild Include="$(RepoRoot)Build.proj" />
+    <ArtifactsDir>$(RepoRoot)</ArtifactsDir>
+  </ItemGroup>
+</Project>

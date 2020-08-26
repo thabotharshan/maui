@@ -278,6 +278,19 @@ stages:
           buildForVS2017: 'true'
         steps:
           - template: build/steps/build-osx.yml
+  
+  - stage: micro_build_signing
+    displayName: MicroBuildSign
+    jobs:
+      - job: nuget_sign
+        displayName: Sign Phase
+        pool:
+          name: $(signVmImage)
+          demands:
+            msbuild
+        steps:
+          - script: dotnet build Build.proj
+            workingDirectory: $(Agent.BuildDirectory)
 
   # only sign using the private server
   - ${{ if eq(variables['System.TeamProject'], 'devdiv') }}:
