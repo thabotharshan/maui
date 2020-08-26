@@ -290,8 +290,8 @@ stages:
           demands:
             msbuild
         steps:
+          - script: dotnet restore Build.proj
           - script: dotnet build Build.proj
-            workingDirectory: $(Agent.BuildDirectory)
 
   # only sign using the private server
   - ${{ if eq(variables['System.TeamProject'], 'devdiv') }}:
