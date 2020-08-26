@@ -286,7 +286,7 @@ stages:
       - job: nuget_sign
         displayName: Sign Phase
         pool:
-          name: $(signVmImage)
+          name: $(corpVmImage)
           demands:
             msbuild
         steps:
