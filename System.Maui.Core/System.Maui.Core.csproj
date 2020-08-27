@@ -28,13 +28,12 @@
 	  <Folder Include="Xaml\Diagnostics\" />
 	</ItemGroup>
 	<PropertyGroup>
-    <GitInfoReportImportance>high</GitInfoReportImportance>
-  </PropertyGroup>
+    	<GitInfoReportImportance>high</GitInfoReportImportance>
+  	</PropertyGroup>
 	<Import Project="..\Xamarin.Flex\Xamarin.Flex.projitems" Label="Shared" Condition="Exists('..\Xamarin.Flex\Xamarin.Flex.projitems')" />
 	<ItemGroup>
-		<FilesToSign Include="System.Maui.Core\bin\Debug\netstadard2.0\System.Maui.Core.dll"> 
+		<FilesToSign Include="*.dll"> 
         	<Authenticode>Microsoft400</Authenticode> 
-        	<StrongName>StrongName</StrongName> 
     	</FilesToSign> 
 	</ItemGroup>
 </Project>
