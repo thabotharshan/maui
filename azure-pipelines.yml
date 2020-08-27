@@ -303,7 +303,7 @@ stages:
             inputs:
               msbuildArguments: /t:build 
               solution: Build.proj
-              configuration: '$(BuildConfiguration)'
+              configuration: '$(DefaultBuildConfiguration)'
 
   # only sign using the private server
   - ${{ if eq(variables['System.TeamProject'], 'devdiv') }}:
