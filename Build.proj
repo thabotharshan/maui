@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.Build.Traversal/2.1.1">
-  <Import Project="eng\Signing.props" />
+  <!-- <Import Project="eng\Signing.props" /> -->
 
   <ItemGroup>
      <ProjectReference Include="System.Maui.Core\System.Maui.Core.csproj" />
   </ItemGroup>
  <ItemGroup> 
-    <FilesToSign Include="System.Maui.Core\bin\Debug\netstadard2.0\System.Maui.Core.dll"> 
+    <!-- <FilesToSign Include="System.Maui.Core\bin\Debug\netstadard2.0\System.Maui.Core.dll"> 
         <Authenticode>Microsoft400</Authenticode> 
         <StrongName>StrongName</StrongName> 
-    </FilesToSign> 
+    </FilesToSign>  -->
 </ItemGroup> 
 </Project>
