@@ -19,6 +19,10 @@
 		<PackageReference Include="System.ComponentModel" Version="4.3.0" />
 		<PackageReference Include="System.Dynamic.Runtime" Version="4.3.0" />
 		<PackageReference Include="System.ValueTuple" Version="4.5.0" />
+		<PackageReference Include="Microsoft.VisualStudioEng.MicroBuild.Core" Version="0.4.1">
+      		<PrivateAssets>all</PrivateAssets>
+      		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    	</PackageReference>
 	</ItemGroup>	
 	<ItemGroup>
 	  <Folder Include="Xaml\Diagnostics\" />
@@ -27,4 +31,10 @@
     <GitInfoReportImportance>high</GitInfoReportImportance>
   </PropertyGroup>
 	<Import Project="..\Xamarin.Flex\Xamarin.Flex.projitems" Label="Shared" Condition="Exists('..\Xamarin.Flex\Xamarin.Flex.projitems')" />
+	<ItemGroup>
+		<FilesToSign Include="System.Maui.Core\bin\Debug\netstadard2.0\System.Maui.Core.dll"> 
+        	<Authenticode>Microsoft400</Authenticode> 
+        	<StrongName>StrongName</StrongName> 
+    	</FilesToSign> 
+	</ItemGroup>
 </Project>
