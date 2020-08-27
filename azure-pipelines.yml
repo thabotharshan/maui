@@ -292,12 +292,12 @@ stages:
         steps:
           #- script: dotnet restore Build.proj
           # - script: dotnet build Build.proj
-          # - task: MicroBuildSigningPlugin@2
-          #   inputs:
-          #     signType: 'test'
-          #     feedSource: 'https://devdiv.pkgs.visualstudio.com/DefaultCollection/_packaging/MicroBuildToolset/nuget/v3/index.json'
-          #   env:
-          #     TeamName: 'Maui'
+          - task: MicroBuildSigningPlugin@2
+            inputs:
+              signType: 'test'
+              feedSource: 'https://devdiv.pkgs.visualstudio.com/DefaultCollection/_packaging/MicroBuildToolset/nuget/v3/index.json'
+            env:
+              TeamName: 'Maui'
           - task: MSBuild@1
             displayName: 'Build src'
             inputs:
