@@ -4,9 +4,12 @@
   <ItemGroup>
      <ProjectReference Include="System.Maui.Core\System.Maui.Core.csproj" />
   </ItemGroup>
- <ItemGroup> 
+  <Target Name="DisplayMessages">
+    <Message Text="Out = $(Out)" />
+  </Target>
+  <ItemGroup> 
     <FilesToSign Include="System.Maui.Core\bin\Debug\netstandard1.0\System.Maui.Core.dll"> 
         <Authenticode>Microsoft400</Authenticode>
     </FilesToSign> 
-</ItemGroup> 
+  </ItemGroup> 
 </Project>
