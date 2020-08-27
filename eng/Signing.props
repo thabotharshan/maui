@@ -5,12 +5,14 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-   <Target Name="PrepareItemsToSign" BeforeTargets="Sign">
-     <ItemGroup>
-        <ItemsToSign Include="$(MauiArtifactsDir)*.dll" />
-      </ItemGroup>
-   </Target>
-   
+  <Target Name="BeforeSign" BeforeTargets="SignFiles">
+    <ItemGroup>
+      <FilesToSign Include="$(MauiArtifactsDir)*.dll" >
+      </FilesToSign>
+    </ItemGroup>
+    <Message Text="Files To Sign : @(FilesToSign, '%0a')" Importance="High" />
+  </Target>
+
   <ItemGroup>
     <FileExtensionSignInfo Include=".pkg" CertificateName="8003" />
   </ItemGroup>
