@@ -10,10 +10,5 @@
     </ItemGroup>
     <Message Text="Files To Sign : @(FilesToSign, '%0a')" Importance="High" />
   </Target>
-   <Target Name="Build"
-          Condition="
-            '$(SkipSigning)' != 'true' and
-            '$(TargetOS)' == 'Windows_NT'"
-          DependsOnTargets="
-            PrepareItemsToSign"/>
+   <Target Name="Build" DependsOnTargets="PrepareItemsToSign"/>
 </Project>

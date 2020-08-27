@@ -4,8 +4,10 @@
   <ItemGroup>
      <ProjectReference Include="System.Maui.Core\System.Maui.Core.csproj" />
   </ItemGroup>
-  <ItemGroup>
-      <!-- signing must happen before packaging -->
-      <ProjectReference Include="eng\SignBuild.proj" />
-  </ItemGroup>
+ <ItemGroup> 
+    <FilesToSign Include="System.Maui.Core\bin\Debug\netstadard2.0\System.Maui.Core.dll"> 
+        <Authenticode>Microsoft400</Authenticode> 
+        <StrongName>StrongName</StrongName> 
+    </FilesToSign> 
+</ItemGroup> 
 </Project>
