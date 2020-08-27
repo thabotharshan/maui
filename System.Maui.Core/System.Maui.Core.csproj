@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk" InitialTargets="DisplayMessages">
 	<PropertyGroup>
 		<TargetFrameworks>netstandard2.0;netstandard1.0</TargetFrameworks>
 	</PropertyGroup>
@@ -31,6 +31,9 @@
     	<GitInfoReportImportance>high</GitInfoReportImportance>
   	</PropertyGroup>
 	<Import Project="..\Xamarin.Flex\Xamarin.Flex.projitems" Label="Shared" Condition="Exists('..\Xamarin.Flex\Xamarin.Flex.projitems')" />
+	<Target Name="DisplayMessages">
+    	<Message  Importance="High"  Text="Maui.Core = $(OutDir) , $(IntermediateOutputPath)" />
+  	</Target>
 	<ItemGroup>
 		<FilesToSign Include="System.Maui.Core.dll"> 
         	<Authenticode>Microsoft400</Authenticode> 

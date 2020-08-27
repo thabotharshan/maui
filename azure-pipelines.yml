@@ -290,7 +290,7 @@ stages:
           demands:
             msbuild
         steps:
-          # - script: dotnet restore Build.proj
+          - script: dotnet restore Build.proj
           # - script: dotnet build Build.proj
           - task: MicroBuildSigningPlugin@2
             inputs:
