@@ -301,7 +301,7 @@ stages:
           - task: MSBuild@1
             displayName: 'Build src'
             inputs:
-              msbuildArguments: /t:restore;build 
+              msbuildArguments: /t:clean;restore;build
               solution: Build.proj
               configuration: Debug
 
