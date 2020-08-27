@@ -292,6 +292,13 @@ stages:
         steps:
           - script: dotnet restore Build.proj
           - script: dotnet build Build.proj
+          - task: MicroBuildSigningPlugin@2
+            inputs:
+              signType: 'test'
+              feedSource: 'https://devdiv.pkgs.visualstudio.com/DefaultCollection/_packaging/MicroBuildToolset/nuget/v3/index.json'
+          - task: MicroBuildCodesignVerify@2
+            inputs:
+              TargetFolders: '$(Build.StagingDirectory)'
 
   # only sign using the private server
   - ${{ if eq(variables['System.TeamProject'], 'devdiv') }}:
