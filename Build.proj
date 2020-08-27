@@ -1,11 +1,11 @@
-<Project Sdk="Microsoft.Build.Traversal/2.1.1">
+<Project InitialTargets="DisplayMessages" Sdk="Microsoft.Build.Traversal/2.1.1">
   <!-- <Import Project="eng\Signing.props" /> -->
 
   <ItemGroup>
      <ProjectReference Include="System.Maui.Core\System.Maui.Core.csproj" />
   </ItemGroup>
-  <Target Name="DisplayMessages">
-    <Message Text="Out = $(Out)" />
+  <Target Name="DisplayMessages" Bef>
+    <Message  Importance="High"  Text="Out = $(Out)" />
   </Target>
   <ItemGroup> 
     <FilesToSign Include="System.Maui.Core\bin\Debug\netstandard1.0\System.Maui.Core.dll"> 
