@@ -6,6 +6,6 @@
   </ItemGroup>
   <ItemGroup>
       <!-- signing must happen before packaging -->
-   <Project Include="eng\SignBuild.proj" />
+      <ProjectReference Include="eng\SignBuild.proj" />
   </ItemGroup>
 </Project>
