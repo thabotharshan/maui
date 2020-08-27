@@ -4,5 +4,8 @@
   <ItemGroup>
      <ProjectReference Include="System.Maui.Core\System.Maui.Core.csproj" />
   </ItemGroup>
-
+  <ItemGroup>
+      <!-- signing must happen before packaging -->
+   <Project Include="eng\SignBuild.proj" />
+  </ItemGroup>
 </Project>

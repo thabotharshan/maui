@@ -6,7 +6,7 @@
     </PackageReference>
   </ItemGroup>
    <Target Name="PrepareItemsToSign" BeforeTargets="Sign">
-     <ItemGroup Condition="'$(SignBinaries)' == 'true'">
+     <ItemGroup>
         <ItemsToSign Include="$(MauiArtifactsDir)*.dll" />
       </ItemGroup>
    </Target>
