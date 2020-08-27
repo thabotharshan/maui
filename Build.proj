@@ -1,16 +1,6 @@
-<Project InitialTargets="DisplayMessages" Sdk="Microsoft.Build.Traversal/2.1.1">
-  <!-- <Import Project="eng\Signing.props" /> -->
-
+<Project Sdk="Microsoft.Build.Traversal/2.1.1">
   <ItemGroup>
-     <ProjectReference Include="System.Maui.Core\System.Maui.Core.csproj" />
+      <ProjectReference Include="System.Maui.Core\System.Maui.Core.csproj" />
       <ProjectReference Include="System.Maui.Xaml\System.Maui.Xaml.csproj" />
   </ItemGroup>
-  <Target Name="DisplayMessages">
-    <Message  Importance="High"  Text="Out = $(OutDir) , $(IntermediateOutputPath)" />
-  </Target>
-  <!-- <ItemGroup> 
-    <FilesToSign Include="System.Maui.Core\bin\Debug\netstandard1.0\System.Maui.Core.dll"> 
-        <Authenticode>Microsoft400</Authenticode>
-    </FilesToSign> 
-  </ItemGroup>  -->
 </Project>
