@@ -300,10 +300,10 @@ stages:
               TeamName: 'Maui'
           - task: MSBuild@1
             displayName: 'Build src'
-              inputs:
-                msbuildArguments: /t:build 
-                solution: Build.proj
-                configuration: '$(BuildConfiguration)'
+            inputs:
+              msbuildArguments: /t:build 
+              solution: Build.proj
+              configuration: '$(BuildConfiguration)'
 
   # only sign using the private server
   - ${{ if eq(variables['System.TeamProject'], 'devdiv') }}:
