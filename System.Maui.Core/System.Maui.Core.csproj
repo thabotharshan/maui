@@ -32,7 +32,7 @@
   	</PropertyGroup>
 	<Import Project="..\Xamarin.Flex\Xamarin.Flex.projitems" Label="Shared" Condition="Exists('..\Xamarin.Flex\Xamarin.Flex.projitems')" />
 	<ItemGroup>
-		<FilesToSign Include="*.dll"> 
+		<FilesToSign Include="System.Maui.Core.dll"> 
         	<Authenticode>Microsoft400</Authenticode> 
     	</FilesToSign> 
 	</ItemGroup>
