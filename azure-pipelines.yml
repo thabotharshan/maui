@@ -21,6 +21,21 @@ variables:
   value: true
 - name: DOTNET_VERSION
   value: 3.1.100
+- name: _TeamName
+  value:  Maui
+- ${{ if ne(variables['Build.Reason'], 'PullRequest') }}:
+  - name: _BuildArgs
+    value: /p:TeamName=$(_TeamName)
+  - name: _SignType
+    value: real
+
+- ${{ if eq(variables['Build.Reason'], 'PullRequest') }}:
+  - name: _BuildArgs
+    value: ''
+  - name: _SignType
+    value: test
+  - name: _PublishArgs
+    value: ''
 
 resources:
   repositories:
@@ -290,20 +305,25 @@ stages:
           demands:
             msbuild
         steps:
+          - checkout: self
+            clean: true
           - script: dotnet restore Build.proj
           # - script: dotnet build Build.proj
           - task: MicroBuildSigningPlugin@2
             inputs:
-              signType: 'test'
+              signType: $(_SignType)
               feedSource: 'https://devdiv.pkgs.visualstudio.com/DefaultCollection/_packaging/MicroBuildToolset/nuget/v3/index.json'
             env:
-              TeamName: 'Maui'
+              TeamName: $(_TeamName)
           - task: MSBuild@1
             displayName: 'Build src'
             inputs:
               msbuildArguments: /t:clean;restore;build
               solution: Build.proj
               configuration: Debug
+          - task: MicroBuildCleanup@1
+            env:
+              TeamName: $(_TeamName)
 
   # only sign using the private server
   # - ${{ if eq(variables['System.TeamProject'], 'devdiv') }}:
