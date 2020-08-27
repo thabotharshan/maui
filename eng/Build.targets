@@ -1,7 +1,6 @@
 <Project>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-    <MauiArtifactsDir>$([MSBuild]::NormalizeDirectory('$(ArtifactsDir)', 'bin', 'Debug', 'netstandard2.0'))</MauiArtifactsDir>
+     <MauiArtifactsDir>$([MSBuild]::NormalizeDirectory('$(ArtifactsDir)', 'bin', 'Debug', 'netstandard2.0'))</MauiArtifactsDir>
   </PropertyGroup>
 
   <ItemGroup>
