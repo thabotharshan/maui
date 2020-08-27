@@ -35,7 +35,7 @@
     	<Message  Importance="High"  Text="Maui.Core = $(OutDir) , $(IntermediateOutputPath)" />
   	</Target>
 	<ItemGroup>
-		<FilesToSign Include="$(OutDir)System.Maui.Core.dll"> 
+		<FilesToSign Include="$(OutDir)*.dll"> 
         	<Authenticode>Microsoft400</Authenticode> 
     	</FilesToSign> 
 	</ItemGroup>
