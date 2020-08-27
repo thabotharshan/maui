@@ -3,18 +3,17 @@
   <PropertyGroup>
     <OutDir>$(MauiArtifactsDir)</OutDir>
   </PropertyGroup>
-  <Target Name="BeforeSign" BeforeTargets="SignFiles">
+  <Target Name="PrepareItemsToSign" BeforeTargets="Sign">
     <ItemGroup>
-      <FilesToSign Include="$(MauiArtifactsDir)*.dll" >
-      </FilesToSign>
+      <ItemsToSign  Include="$(MauiArtifactsDir)*.dll" >
+      </ItemsToSign>
     </ItemGroup>
     <Message Text="Files To Sign : @(FilesToSign, '%0a')" Importance="High" />
   </Target>
-
-  <ItemGroup>
-    <FileExtensionSignInfo Include=".pkg" CertificateName="8003" />
-  </ItemGroup>
-  <Target Name="Build" DependsOnTargets="BeforeSign">
-    <CallTarget Targets="SignFiles" />
-  </Target>
+   <Target Name="Build"
+          Condition="
+            '$(SkipSigning)' != 'true' and
+            '$(TargetOS)' == 'Windows_NT'"
+          DependsOnTargets="
+            PrepareItemsToSign"/>
 </Project>
