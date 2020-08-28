@@ -27,7 +27,7 @@ variables:
   - name: _BuildArgs
     value: /p:TeamName=$(_TeamName)
   - name: _SignType
-    value: real
+    value: test
 
 - ${{ if eq(variables['Build.Reason'], 'PullRequest') }}:
   - name: _BuildArgs
