@@ -327,6 +327,16 @@ stages:
               msbuildArguments: /t:pack /p:NoBuild=true
               solution: Build.proj
               configuration: 'Debug'
+          - task: CopyFiles@2
+            displayName: 'Copy packages to staging directory'
+            inputs:
+              contents: '$(System.DefaultWorkingDirectory)/**/*.nupkg'
+              targetFolder: $(Build.ArtifactStagingDirectory)/SignedPackages
+              flattenFolders: true
+          - task: PublishPipelineArtifact@1
+            inputs:
+              targetPath: $(Build.ArtifactStagingDirectory)/SignedPackages
+              artifactName: 'SignedPackages'
           - task: MicroBuildCleanup@1
             env:
               TeamName: $(_TeamName)
