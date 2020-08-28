@@ -320,7 +320,13 @@ stages:
             inputs:
               msbuildArguments: /t:clean;restore;build
               solution: Build.proj
-              configuration: Debug
+              configuration: '$(BuildConfiguration)'
+          - task: MSBuild@1
+            displayName: 'Pack src Windows and Android projects'
+            inputs:
+              msbuildArguments: /t:pack /p:NoBuild=true
+              solution: Build.proj
+              configuration: '$(BuildConfiguration)'
           - task: MicroBuildCleanup@1
             env:
               TeamName: $(_TeamName)
