@@ -21,7 +21,7 @@
       <ProjectToBuild Include="System.Maui.Core\System.Maui.Core.csproj" />
       <ProjectReference Include="System.Maui.Xaml\System.Maui.Xaml.csproj" />
       <!-- <ProjectReference Include="System.Maui.Maps\System.Maui.Maps.csproj" />
-      <ProjectReference Include="System.Maui.Platform.iOS\System.Maui.Platform.iOS.csproj" /> --> -->
-      <!-- <ProjectReference Include="System.Maui.Platform.Android\System.Maui.Platform.Android.csproj" /> -->
+      <ProjectReference Include="System.Maui.Platform.iOS\System.Maui.Platform.iOS.csproj" /> 
+      <ProjectReference Include="System.Maui.Platform.Android\System.Maui.Platform.Android.csproj" /> -->
   </ItemGroup>
 </Project>
