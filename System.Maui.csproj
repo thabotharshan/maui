@@ -1,7 +1,6 @@
 <Project Sdk="MSBuild.Sdk.Extras/2.0.54">
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.0;netstandard2.0;Xamarin.iOS10;MonoAndroid10.0;</TargetFrameworks>
-    <!-- <TargetFrameworks Condition=" '$(OS)' == 'Windows_NT' ">$(TargetFrameworks);uap10.0.16299;</TargetFrameworks> -->
+    <TargetFrameworks>netstandard1.0;netstandard2.0;Xamarin.iOS10</TargetFrameworks>
     <AssemblyName>System.Maui</AssemblyName>
     <RootNamespace>System.Maui</RootNamespace>
     <PackageId>System.Maui</PackageId>
@@ -53,20 +52,14 @@
 	<ProjectReference Include="System.Maui.Core\System.Maui.Core.csproj" />
 	<ProjectReference Include="System.Maui.Xaml\System.Maui.Xaml.csproj" />
   </ItemGroup>
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard1.')) ">
-   
-  </ItemGroup>
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) ">
-   
-  </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'MonoAndroid10.0'">
+  <!-- <ItemGroup Condition="'$(TargetFramework)' == 'MonoAndroid10.0'">
 	<PackageReference Include="Xamarin.AndroidX.Lifecycle.LiveData" Version="2.1.0" />
     <PackageReference Include="Xamarin.Google.Android.Material" Version="1.0.0" />
     <PackageReference Include="Xamarin.AndroidX.Legacy.Support.V4" Version="1.0.0" />
     <PackageReference Include="Xamarin.AndroidX.Browser" Version="1.0.0" />
 	<ProjectReference Include="System.Maui.Platform.Android\System.Maui.Platform.Android.csproj" />
-  </ItemGroup>
+  </ItemGroup> -->
 
   <ItemGroup Condition="'$(TargetFramework)' == 'Xamarin.iOS10'">
 	<ProjectReference Include="System.Maui.Platform.iOS\System.Maui.Platform.iOS.csproj" />
