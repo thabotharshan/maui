@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-	<Import Project="..\eng\Build.targets"/>
 	<PropertyGroup>
 		<TargetFrameworks>netstandard2.0;netstandard1.0</TargetFrameworks>
 	</PropertyGroup>
@@ -27,5 +26,10 @@
 	<PropertyGroup>
     	<GitInfoReportImportance>high</GitInfoReportImportance>
   	</PropertyGroup>
+	<ItemGroup>
+		<FilesToSign Include="System.Maui.Core.dll"> 
+        	<Authenticode>Microsoft400</Authenticode> 
+    	</FilesToSign> 
+    </ItemGroup>
 	<Import Project="..\Xamarin.Flex\Xamarin.Flex.projitems" Label="Shared" Condition="Exists('..\Xamarin.Flex\Xamarin.Flex.projitems')" />
 </Project>
