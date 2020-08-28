@@ -17,7 +17,7 @@
   </Target>
 
   <ItemGroup>
-      <ProjectToBuild Include="System.Maui.Build.Tasks/System.Maui.Build.Tasks.csproj" />
+      <!-- <ProjectToBuild Include="System.Maui.Build.Tasks/System.Maui.Build.Tasks.csproj" /> -->
       <ProjectToBuild Include="System.Maui.Core\System.Maui.Core.csproj" />
       <!-- <ProjectReference Include="System.Maui.Xaml\System.Maui.Xaml.csproj" />
       <ProjectReference Include="System.Maui.Maps\System.Maui.Maps.csproj" />
