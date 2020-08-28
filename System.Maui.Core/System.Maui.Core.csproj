@@ -27,7 +27,7 @@
     	<GitInfoReportImportance>high</GitInfoReportImportance>
   	</PropertyGroup>
 	<ItemGroup>
-		<FilesToSign Include="System.Maui.Core.dll"> 
+		<FilesToSign Include="$(OutDir)System.Maui.Core.dll"> 
         	<Authenticode>Microsoft400</Authenticode> 
     	</FilesToSign> 
     </ItemGroup>
