@@ -6,4 +6,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
   </PropertyGroup>
+  <ItemGroup>
+    <FilesToSign Include="$(OutDir)System.Maui.Platform.dll"> 
+      <Authenticode>Microsoft400</Authenticode> 
+    </FilesToSign> 
+  </ItemGroup>
 </Project>
