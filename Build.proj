@@ -1,10 +1,27 @@
-<Project Sdk="Microsoft.Build.Traversal/2.1.1">
+<Project>
+  <PropertyGroup>
+    <AdditionalProperties>SkipMacBuild=true</AdditionalProperties>
+  </PropertyGroup>
+
+  <Target Name="Restore">
+    <MSBuild Projects="@(ProjectToBuild)" Targets="Restore" Properties="$(AdditionalProperties)" />
+  </Target>
+  <Target Name="Build">
+    <MSBuild Projects="@(ProjectToBuild)" Targets="Build" Properties="$(AdditionalProperties)" />
+  </Target>
+  <Target Name="Clean">
+    <MSBuild Projects="@(ProjectToBuild)"  Targets="Clean" Properties="$(AdditionalProperties)" />
+  </Target>
+  <Target Name="Pack">
+    <MSBuild Projects="@(ProjectToBuild)"  Targets="Pack" Properties="$(AdditionalProperties)" />
+  </Target>
+
   <ItemGroup>
-      <ProjectReference Include="System.Maui.Build.Tasks/System.Maui.Build.Tasks.csproj" />
-      <ProjectReference Include="System.Maui.Core\System.Maui.Core.csproj" />
-      <ProjectReference Include="System.Maui.Xaml\System.Maui.Xaml.csproj" />
+      <ProjectToBuild Include="System.Maui.Build.Tasks/System.Maui.Build.Tasks.csproj" />
+      <ProjectToBuild Include="System.Maui.Core\System.Maui.Core.csproj" />
+      <!-- <ProjectReference Include="System.Maui.Xaml\System.Maui.Xaml.csproj" />
       <ProjectReference Include="System.Maui.Maps\System.Maui.Maps.csproj" />
-      <ProjectReference Include="System.Maui.Platform.iOS\System.Maui.Platform.iOS.csproj" />
+      <ProjectReference Include="System.Maui.Platform.iOS\System.Maui.Platform.iOS.csproj" /> -->
       <!-- <ProjectReference Include="System.Maui.Platform.Android\System.Maui.Platform.Android.csproj" /> -->
   </ItemGroup>
 </Project>
