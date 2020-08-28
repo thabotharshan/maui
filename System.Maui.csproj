@@ -48,13 +48,29 @@
 	<None Include="Assets\xamarin_128x128.png"  PackagePath="icon.png" Pack="true" />
     <PackageReference Include="Xamarin.Build.TypeRedirector" Version="0.1.2-preview" PrivateAssets="all" /> 
   </ItemGroup>
+
+  <!--Xamlc stuff-->
   <ItemGroup>
-    <None Include="System.Maui.targets" Pack="True" PackagePath="build/" />
-    <None Include="System.Maui.props" Pack="True" PackagePath="build/" />
-    <None Include="System.Maui.DefaultItems.targets" Pack="True" PackagePath="build/" />
-    <None Include="System.Maui.DefaultItems.props" Pack="True" PackagePath="build/" />
+    <None Include=".nuspec/System.Maui.targets" Pack="True" PackagePath="build/" />
+    <None Include=".nuspec/System.Maui.props" Pack="True" PackagePath="build/" />
+    <None Include=".nuspec/System.Maui.DefaultItems.targets" Pack="True" PackagePath="build/" />
+    <None Include=".nuspec/System.Maui.DefaultItems.props" Pack="True" PackagePath="build/" />
   </ItemGroup>
- 
+
+   <!--Xamlc stuff buildTransitive-->
+   <ItemGroup>
+    <None Include=".nuspec/System.Maui.targets" Pack="True" PackagePath="buildTransitive/" />
+    <None Include=".nuspec/System.Maui.props" Pack="True" PackagePath="buildTransitive/" />
+    <None Include=".nuspec/System.Maui.DefaultItems.targets" Pack="True" PackagePath="buildTransitive/" />
+    <None Include=".nuspec/System.Maui.DefaultItems.props" Pack="True" PackagePath="buildTransitive/" />
+  </ItemGroup>
+
+  <!--Android linker file-->
+  <ItemGroup>
+    <None Include=".nuspec/proguard.cfg" Pack="True" PackagePath="build/MonoAndroid10/proguard.cfg" />
+    <None Include=".nuspec/proguard.cfg" Pack="True" PackagePath="buildTransitive\MonoAndroid10\proguard.cfg" />
+  </ItemGroup>
+   
   <ItemGroup>
 	<ProjectReference Include="System.Maui.Core\System.Maui.Core.csproj" />
 	<ProjectReference Include="System.Maui.Xaml\System.Maui.Xaml.csproj" />
